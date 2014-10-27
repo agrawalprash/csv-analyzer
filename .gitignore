@@ -1,0 +1,8 @@
+# Virtualenv directory
+.csv-analyzer-env/
+
+*.idea/
+
+get-pip.py
+
+*.egg-info/
