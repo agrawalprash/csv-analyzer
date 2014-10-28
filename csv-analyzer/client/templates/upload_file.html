@@ -8,6 +8,8 @@
     <div ng-show='file_chosen'>
         <div ng-show='!upload_started'>
             File chosen: {{file.name}}
+
+            <!-- Button to start off the upload -->
             <button ng-show='!upload_started' ng-click='start_upload()'>
                 Start upload
             </button>
@@ -15,6 +17,8 @@
 
         <div ng-show='upload_started'>
             Uploading file...
+
+            <!-- Upload progress bar -->
             <div class='progress-bar-container'>
                 =====progress bar====..........
                 <div class='progress-bar' style='width: {{progress}}%'></div>
