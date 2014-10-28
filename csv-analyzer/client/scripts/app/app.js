@@ -1,5 +1,6 @@
 var app = angular.module('CSVApp', ['ngRoute']);
 
+// Application's route config
 app.config(['$routeProvider', function($routeProvider){
 
     $routeProvider.when('/upload_file', {
@@ -32,4 +33,13 @@ app.config(['$routeProvider', function($routeProvider){
         templateUrl: 'templates/analyze_realtime_data.html'
     });
 
+    $routeProvider.otherwise({
+        redirectTo: '/upload_file'
+    });
+
 }]);
+
+angular.element(document).ready(function(){
+    angular.bootstrap(document, [app.name]);
+});
+

@@ -1,0 +1,32 @@
+<div ng-controller='FileUploadController'>
+    <div ng-show='!file_chosen'>
+        <button ng-click='choose_file()'>Choose a file to upload</button>
+    </div>
+
+    <br>
+
+    <div ng-show='file_chosen'>
+        <div ng-show='!upload_started'>
+            File chosen: {{file_name}}
+            <button ng-show='!upload_started' ng-click='start_upload()'>
+                Start upload
+            </button>
+        </div>
+
+        <div ng-show='upload_started'>
+            Uploading file...
+            <div class='progress-bar-container'>
+                =====progress bar====..........
+                <div class='progress-bar' ng-style='width: {{progress}}%'></div>
+            </div>
+
+            <!-- Pause/Resume operations -->
+            <button ng-click='!upload_paused'>Pause upload</button>
+            <button ng-show='upload_paused'>Resume upload</button>
+
+            <!-- Cancel operation -->
+            <button ng-click='cancel_upload()'>Cancel upload</button>
+        </div>
+    </div>
+
+</div>
