@@ -6,3 +6,5 @@
 get-pip.py
 
 *.egg-info/
+
+*/*.DS_Store
