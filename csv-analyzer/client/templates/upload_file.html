@@ -7,7 +7,7 @@
 
     <div ng-show='file_chosen'>
         <div ng-show='!upload_started'>
-            File chosen: {{file_name}}
+            File chosen: {{file.name}}
             <button ng-show='!upload_started' ng-click='start_upload()'>
                 Start upload
             </button>
@@ -17,12 +17,16 @@
             Uploading file...
             <div class='progress-bar-container'>
                 =====progress bar====..........
-                <div class='progress-bar' ng-style='width: {{progress}}%'></div>
+                <div class='progress-bar' style='width: {{progress}}%'></div>
             </div>
 
             <!-- Pause/Resume operations -->
-            <button ng-click='!upload_paused'>Pause upload</button>
-            <button ng-show='upload_paused'>Resume upload</button>
+            <button ng-show='!upload_paused' ng-click='pause_upload()'>
+                Pause upload
+            </button>
+            <button ng-show='upload_paused' ng-click='resume_upload()'>
+                Resume upload
+            </button>
 
             <!-- Cancel operation -->
             <button ng-click='cancel_upload()'>Cancel upload</button>
