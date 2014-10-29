@@ -1,11 +1,11 @@
 <div ng-controller='FileUploadController'>
-    <div ng-show='!file_chosen'>
-        <button ng-click='choose_file()'>Choose a file to upload</button>
+    <div ng-show='!file'>
+        <input type='file' file-model='file'/>
     </div>
 
     <br>
 
-    <div ng-show='file_chosen'>
+    <div ng-show='file'>
         <div ng-show='!upload_started'>
             File chosen: {{file.name}}
 

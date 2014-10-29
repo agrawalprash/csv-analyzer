@@ -7,17 +7,9 @@ app.controller(
     function($scope, FileUploadService){
 
         $scope.init = function() {
-            $scope.file_chosen = false;
+            $scope.file = null;
             $scope.upload_started = false;
             $scope.upload_paused = false;
-        };
-
-        $scope.choose_file = function() {
-            $scope.file_chosen = true;
-
-            // putting dummy values for now. this would be some `File` object
-            // ultimately
-            $scope.file = {};
         };
 
         $scope.start_upload = function() {
